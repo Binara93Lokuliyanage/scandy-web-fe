@@ -1,0 +1,58 @@
+/* heading and font styles ------------------------------------------------------ */
+/* h1{
+    font-family: Arial, Helvetica, sans-serif;
+} */
+p{
+    text-align: center;
+}
+/* main div styles -------------------------------------------------------------- */
+.commonArea{
+    width:100%;
+}
+.contentArea{
+    margin: auto;
+    width:95%;
+    overflow: auto;
+}
+.titleArea{
+    position: relative;
+    margin: auto;
+    width:95%;
+    height: 80px;
+    border-bottom: 1px solid;
+}
+.footerArea{
+    bottom: 0;
+    margin: auto;
+    width:95%;
+    height: 80px;
+    border-top: 1px solid;
+}
+.pageTitle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:250px;
+    height: 35px;
+}
+.buttonArea{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width:200px;
+    height: 40px;
+}
+/* buttons and other ------------------------------------------------------------- */
+.mat-raised-button{
+    margin-left: 10px;
+}
+.mat-card{
+    margin: auto;
+    width: 90%;
+}
+.mat-card-content{
+    margin: auto;
+}
+.form-field-style{
+    width: 60%;
+}

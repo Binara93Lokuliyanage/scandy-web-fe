@@ -1,0 +1,32 @@
+<div id = "mainAreaList" class = "commonArea">
+    <!-- Title area starts here ----------------------------------->
+    <div class = "titleArea" >
+        <div class = "pageTitle">
+            <h1 class="md-display-3">Product List</h1>
+        </div>
+        <div class = "buttonArea">
+            <button mat-raised-button color="primary" (click)="naviagteToAddProduct()">Add</button>
+            <button mat-raised-button color="primary">Mass Delete</button>
+        </div>
+    </div>
+    <!-- Title area ends here ---------------------------------------> 
+    <!-- Content area starts here -----------------------------------> 
+    <div class = "contentArea" id="contentAreaList">
+        <mat-grid-list cols="4" rowHeight="2:1">
+            <mat-grid-tile>   
+                <mat-card>
+                    <section class="example-section">
+                        <mat-checkbox class="delete-checkbox" color="primary"></mat-checkbox>
+                    </section>
+                    <mat-card-content>first</mat-card-content>
+                </mat-card>
+            </mat-grid-tile> 
+          </mat-grid-list>     
+        </div>
+    <!-- Content area ends here ------------------------------------> 
+    <!-- Footer area starts here -----------------------------------> 
+    <div class = "footerArea" id="footer">
+        <p>Scandyweb Test Assignment</p>
+    </div>
+    <!-- Footer area ends here ------------------------------------->
+</div>
