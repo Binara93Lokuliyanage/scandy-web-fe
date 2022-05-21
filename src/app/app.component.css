@@ -39,7 +39,7 @@ p{
     position: absolute;
     bottom: 0;
     right: 0;
-    width:200px;
+    width:250px;
     height: 40px;
 }
 /* buttons and other ------------------------------------------------------------- */
@@ -92,3 +92,22 @@ p{
       -o-animation: fadein 2s; /* Opera < 12.1 */
          animation: fadein 2s;
 }
+select {
+    width: 70%;
+    padding: 15px 10px 15px 5px;
+    box-sizing: border-box;
+    border: 1px solid rgb(241, 241, 241);
+    border-bottom: 1px solid rgb(151, 151, 151);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    color:rgb(114, 114, 114);
+    background-color: rgb(241, 241, 241);
+    }
+ select:focus {
+        border-bottom: 1px solid #676767;
+        color: #676767;
+      }
+select:after {
+        color: black;
+      }

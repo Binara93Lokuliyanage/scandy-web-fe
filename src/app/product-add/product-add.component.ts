@@ -97,15 +97,15 @@ widthBox.addEventListener("keydown", function(e) {
     this.router.navigate(['/productList']);
   }
   typeSwitcher(){
-    if(this.prodData.productType === 'dvd') {
+    if(this.prodData.productType === 'DVD') {
       document.getElementById('DVD').style.display = "block";
       document.getElementById('Furniture').style.display = "none";
       document.getElementById('Book').style.display = "none";
-    } else if (this.prodData.productType === 'book') {
+    } else if (this.prodData.productType === 'Book') {
       document.getElementById('DVD').style.display = "none";
       document.getElementById('Furniture').style.display = "none";
       document.getElementById('Book').style.display = "block";
-    } else if (this.prodData.productType === 'furniture') {
+    } else if (this.prodData.productType === 'Furniture') {
       document.getElementById('DVD').style.display = "none";
       document.getElementById('Furniture').style.display = "block";
       document.getElementById('Book').style.display = "none";
@@ -142,14 +142,14 @@ widthBox.addEventListener("keydown", function(e) {
       document.getElementById('notificationMsg').innerHTML = "Please provide the price of indicated type (xxxx.xx) !"
       document.getElementById('notification').style.visibility = "visible"
     } else {
-      if(this.prodData.productType === 'dvd'){
+      if(this.prodData.productType === 'DVD'){
         if(this.prodData.size === null || this.prodData.size === ''){
           document.getElementById('notificationMsg').innerHTML = "Please submit size !"
           document.getElementById('notification').style.visibility = "visible"
         } else {
           this.addProduct()
         }
-      } else if(this.prodData.productType === 'book'){
+      } else if(this.prodData.productType === 'Book'){
         if(this.prodData.weight === null || this.prodData.weight === ''){
           document.getElementById('notificationMsg').innerHTML = "Please submit weight !"
           document.getElementById('notification').style.visibility = "visible"

@@ -29,14 +29,13 @@
                 <input matInput type="number" [(ngModel)] ="prodData.price"  name = "price" id = "price" #price="ngModel" style="margin-left: 10px;" >
             </mat-form-field><br>
 
-            <mat-form-field class="form-field-style" appearance="fill">
-                <mat-label>Product Type</mat-label>
-                <mat-select [(ngModel)] ="prodData.productType"  name = "productType" id = "productType" #productType="ngModel" style="margin-left: 10px;" (selectionChange)="typeSwitcher()" >
-                  <mat-option value="dvd">DVD</mat-option>
-                  <mat-option value="book">Book</mat-option>
-                  <mat-option value="furniture">Furniture</mat-option>
-                </mat-select>
-              </mat-form-field>
+                    
+                <select [(ngModel)] ="prodData.productType"  name = "productType" id = "productType" #productType="ngModel" style = "width: 60%" (change)="typeSwitcher()" >
+                    <option value="" disabled selected hidden>Product Type</option>
+                    <option value="DVD">DVD</option>
+                    <option value="Book">Book</option>
+                    <option value="Furniture">Furniture</option>
+                  </select>
             
             <div id = "DVD">
                 Please Provide Size in Megabytes*<br><br>

@@ -61,11 +61,6 @@ export class ProductListComponent implements OnInit {
 
     dataSender = this.massDeleteList;
 
-    if(this.massDeleteList.length === 0){  
-      this.closeDelete();
-      document.getElementById('feedbackMsg').innerHTML = "Please select products to delete !";
-      document.getElementById('feedback').style.visibility = "visible";
-    } else {
       this.apiService.massDelete(dataSender)
       .subscribe
       (
@@ -80,8 +75,7 @@ export class ProductListComponent implements OnInit {
           );
         }
       )
-    }
-
+    
   
   }
 }
