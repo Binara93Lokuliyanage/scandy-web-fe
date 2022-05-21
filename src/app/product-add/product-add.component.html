@@ -5,7 +5,7 @@
             <h1 class="md-display-3">Product Add</h1>
         </div>
         <div class = "buttonArea">
-            <button mat-raised-button color="primary">Save</button>
+            <button mat-raised-button color="primary" (click)="addProductValidator()">Save</button>
             <button mat-raised-button color="primary" (click)="backToList()">Cancel</button>
         </div>
     </div>
@@ -16,7 +16,7 @@
             <br><br>
             <mat-form-field class="form-field-style" appearance="fill">
                 <mat-label>SKU</mat-label>
-                <input matInput type="number" [(ngModel)] ="prodData.sku"  name = "sku" id = "sku" #sku="ngModel" style="margin-left: 10px;" >
+                <input matInput type="text" [(ngModel)] ="prodData.sku"  name = "sku" id = "sku" #sku="ngModel" style="margin-left: 10px;" >
             </mat-form-field><br>
 
             <mat-form-field class="form-field-style" appearance="fill">
@@ -78,5 +78,14 @@
     <div class = "footerArea" id="footer">
         <p>Scandyweb Test Assignment</p>
     </div>
-    <!-- Footer area ends here -------------------------------------dev>
+    <!-- Footer area ends here ------------------------------------->
+</div>
+<!-- Popups area ---------------------------------------------------->
+<div id="notification" class="modal">
+    <div class="modal-content">
+        <mat-card>
+            <mat-card-content id = "notificationMsg">Do you want to add this product?</mat-card-content><br>
+      <button mat-raised-button color="primary" (click)="closeNoti()">Cancel</button>
+    </mat-card>
+    </div> 
 </div>

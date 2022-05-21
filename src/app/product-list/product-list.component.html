@@ -6,19 +6,32 @@
         </div>
         <div class = "buttonArea">
             <button mat-raised-button color="primary" (click)="naviagteToAddProduct()">Add</button>
-            <button mat-raised-button color="primary">Mass Delete</button>
+            <button mat-raised-button color="primary" (click)="massDeleteConfirm()">Mass Delete</button>
         </div>
     </div>
     <!-- Title area ends here ---------------------------------------> 
     <!-- Content area starts here -----------------------------------> 
     <div class = "contentArea" id="contentAreaList">
         <mat-grid-list cols="4" rowHeight="2:1">
-            <mat-grid-tile>   
+            <mat-grid-tile *ngFor="let prod of listProduct">   
                 <mat-card>
                     <section class="example-section">
-                        <mat-checkbox class="delete-checkbox" color="primary"></mat-checkbox>
+                        <mat-checkbox class="delete-checkbox" color="primary" id = {{prod.sku}} (change)="checkCheckBoxvalue($event)"></mat-checkbox>
                     </section>
-                    <mat-card-content>first</mat-card-content>
+                    <mat-card-content>{{prod.sku}}</mat-card-content>
+                    <mat-card-content>{{prod.name}}</mat-card-content>
+                    <mat-card-content>{{prod.price}} $</mat-card-content>
+                    <mat-card-content>
+                        <div *ngIf="prod.type === 'dvd'">
+                            Size: {{prod.size}}MB
+                        </div>
+                        <div *ngIf="prod.type === 'book'">
+                            Weight: {{prod.weight}}KG
+                        </div>
+                        <div *ngIf="prod.type === 'furniture'">
+                            Dimentions: {{prod.height}} x {{prod.width}} x {{prod.length}}
+                        </div>
+                    </mat-card-content>
                 </mat-card>
             </mat-grid-tile> 
           </mat-grid-list>     
@@ -29,4 +42,23 @@
         <p>Scandyweb Test Assignment</p>
     </div>
     <!-- Footer area ends here ------------------------------------->
+</div>
+<!-- Popups area ---------------------------------------------------->
+<div id="confirmDelete" class="modal">
+    <div class="modal-content">
+        <mat-card>
+            <mat-card-content>Do you want delete selected products?</mat-card-content><br>
+      <button mat-raised-button color="primary" (click)="massDelete()">Yes</button>
+      <button mat-raised-button color="primary" (click)="closeDelete()">Cancel</button>
+    </mat-card>
+    </div> 
+</div>
+
+<div id="feedback" class="modal">
+    <div class="modal-content">
+        <mat-card>
+            <mat-card-content id="feedbackMsg">Do you want delete selected products?</mat-card-content><br>
+      <button mat-raised-button color="primary" (click)="closeFeedback()">Close</button>
+    </mat-card>
+    </div> 
 </div>
