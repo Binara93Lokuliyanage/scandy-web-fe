@@ -19,11 +19,9 @@ export class ProductAddComponent implements OnInit {
     name:"",
     price:"",
     productType:"",
-    size:"",
-    height:"",
-    width:"",
-    length:"",
-    weight:"",
+    property:"",
+    property2:"",
+    property3:""
   };
 
   windowHeight: number;
@@ -97,6 +95,9 @@ widthBox.addEventListener("keydown", function(e) {
     this.router.navigate(['/productList']);
   }
   typeSwitcher(){
+    this.prodData.property = ''
+    this.prodData.property2 = ''
+    this.prodData.property3 = ''
     if(this.prodData.productType === 'DVD') {
       document.getElementById('DVD').style.display = "block";
       document.getElementById('Furniture').style.display = "none";
@@ -143,27 +144,27 @@ widthBox.addEventListener("keydown", function(e) {
       document.getElementById('notification').style.visibility = "visible"
     } else {
       if(this.prodData.productType === 'DVD'){
-        if(this.prodData.size === null || this.prodData.size === ''){
+        if(this.prodData.property === null || this.prodData.property === ''){
           document.getElementById('notificationMsg').innerHTML = "Please submit size !"
           document.getElementById('notification').style.visibility = "visible"
         } else {
           this.addProduct()
         }
       } else if(this.prodData.productType === 'Book'){
-        if(this.prodData.weight === null || this.prodData.weight === ''){
+        if(this.prodData.property === null || this.prodData.property === ''){
           document.getElementById('notificationMsg').innerHTML = "Please submit weight !"
           document.getElementById('notification').style.visibility = "visible"
         } else {
           this.addProduct()
         }
       } else {
-        if(this.prodData.height === null || this.prodData.height === ''){
+        if(this.prodData.property === null || this.prodData.property === ''){
           document.getElementById('notificationMsg').innerHTML = "Please submit height !"
           document.getElementById('notification').style.visibility = "visible"
-        } else if(this.prodData.length === null || this.prodData.length === ''){
+        } else if(this.prodData.property3 === null || this.prodData.property3 === ''){
           document.getElementById('notificationMsg').innerHTML = "Please submit length !"
           document.getElementById('notification').style.visibility = "visible"
-        } else if(this.prodData.width === null || this.prodData.width === '') {
+        } else if(this.prodData.property2 === null || this.prodData.property2 === '') {
           document.getElementById('notificationMsg').innerHTML = "Please submit width !"
           document.getElementById('notification').style.visibility = "visible"
         } else {
@@ -179,11 +180,15 @@ widthBox.addEventListener("keydown", function(e) {
     dataSender.name = this.prodData.name;
     dataSender.price =( parseFloat(this.prodData.price)).toFixed(2);
     dataSender.type = this.prodData.productType;
-    dataSender.size = this.prodData.size;
-    dataSender.weight = this.prodData.weight;
-    dataSender.height = this.prodData.height;
-    dataSender.length = this.prodData.length;
-    dataSender.width = this.prodData.width;
+
+    console.log(this.prodData.property2)
+
+    if(this.prodData.property2 === '' || this.prodData.property2 === null){
+      dataSender.property = this.prodData.property;
+    } else {
+      dataSender.property = this.prodData.property + ' x ' + this.prodData.property2 + ' x ' + this.prodData.property3;
+    }
+    
 
   this.apiService.addProduct(dataSender)
   .subscribe
